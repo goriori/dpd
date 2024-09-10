@@ -17,20 +17,19 @@ const onClick = () => emits('onClick')
 
 <template>
   <button
-    type="submit"
-    :class="['btn', background, { outline }]"
-    @click="onClick"
-    v-ripple
+      :class="['btn', background, { outline }]"
+      @click="onClick"
+      v-ripple
   >
     <p v-if="!isLoading">{{ title }}</p>
-    <CircleSpinner v-else class="loader" />
+    <CircleSpinner v-else class="loader"/>
   </button>
 </template>
 
 <style scoped>
 .loader {
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 60px;
+  max-height: 60px;
 }
 
 .btn {
@@ -40,10 +39,11 @@ const onClick = () => emits('onClick')
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 16px;
   border: none;
-  padding: 8px;
-  color: #000;
+  color: #ffffff;
+  font-size: 40px;
+  padding: 24px 0;
   cursor: pointer;
   background-color: transparent;
   transition: var(--animation-time) all ease-in-out;
@@ -52,13 +52,20 @@ const onClick = () => emits('onClick')
     transition: var(--animation-time) all ease-in-out;
     opacity: 0.9;
   }
+
+  &:disabled {
+    opacity: 0.25;
+  }
 }
 
 .outline {
-  border: 1px solid;
+  color: #000;
+  background: #ffffff !important;
+  border: 4px solid transparent;
 }
 
 .primary {
+  border-color: var(--primary-color);
   background-color: var(--primary-color);
 }
 

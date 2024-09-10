@@ -6,9 +6,9 @@
 
 <style scoped lang="scss">
 .loader {
-  width: 28px;
-  height: 28px;
-  border: 2px solid #fff;
+  width: 158px;
+  height: 158px;
+  border: 4px solid #fff;
   border-bottom-color: transparent;
   border-radius: 50%;
   display: inline-block;

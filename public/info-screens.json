@@ -1,0 +1,157 @@
+[
+  {
+    "id": 1,
+    "title": "Доставляйте\nна маркетплейсы\nкомфортно вместе с DPD",
+    "preview": "/images/screens/delivery/preview.png",
+    "typeCard": "info",
+    "cards": [
+      {
+        "id": 1,
+        "title": "12 маркетплейсов\u2028и более 200 складов",
+        "iconTopRight": true,
+        "iconBottomRight": false,
+        "icon": "/images/screens/delivery/icon-1.png"
+      },
+      {
+        "id": 2,
+        "title": "Забор груза \nпо всей России",
+        "iconTopRight": false,
+        "iconBottomRight": true,
+        "icon": "/images/screens/delivery/icon-2.png"
+      },
+      {
+        "id": 3,
+        "title": "Удобный календарь планирования поставки",
+        "iconTopRight": false,
+        "iconBottomRight": true,
+        "icon": "/images/screens/delivery/icon-3.png"
+      },
+      {
+        "id": 4,
+        "title": "Доставка\u2028по удобной для вас схеме: FBO или FBS",
+        "iconTopRight": true,
+        "iconBottomRight": false,
+        "icon": "/images/screens/delivery/icon-4.png"
+      },
+      {
+        "id": 5,
+        "title": "Выделенная поддержка\nпо маркетплейсам",
+        "iconTopRight": true,
+        "iconBottomRight": false,
+        "icon": "/images/screens/delivery/icon-5.png"
+      },
+      {
+        "id": 6,
+        "title": "7 дней бесплатного хранения\u2028на терминале DPD",
+        "iconTopRight": false,
+        "iconBottomRight": true,
+        "icon": "/images/screens/delivery/icon-6.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Дополнительные услуги\n для доставки\nна маркетплейсы",
+    "typeCard": "advantage",
+    "preview": "/images/screens/services/preview.png",
+    "oferta": "*Предложение действительно сроком на один месяц для новых клиентов для тарифов DPD Standard и\n        DPD Economy,\n        прошедших регистрацию на странице акции. Предложение не является офертой. Реклама. АО «ДПД РУС», ИНН\n        7713215523",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Паллетирование",
+        "subtitle": "Поможем вам упаковать товары на паллетах,\u2028чтобы обеспечить\u2028их сохранность.",
+        "icon": "/images/screens/services/icon-1.png"
+      },
+      {
+        "id": 2,
+        "title": "Предоставление палеты",
+        "subtitle": "Наши специалисты подберут оптимальный вариант упаковки для вашей продукции.",
+        "icon": "/images/screens/services/icon-2.png"
+      },
+      {
+        "id": 3,
+        "title": "Оклейка штрих-кодом",
+        "subtitle": "Нанесение штрихкодов\u2028на продукцию упростит учёт\u2028и контроль товаров.",
+        "icon": "/images/screens/services/icon-3.png"
+      },
+      {
+        "id": 4,
+        "title": "Для новых клиентов <span style='color:red;'>скидка</span> на доставку до складов <span style='color:red;'>маркетплейсов<span>",
+        "icon": "/images/screens/services/icon-4.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Выгодная и надежная\nдоставка для интернет-\nмагазинов",
+    "typeCard": "info",
+    "preview": "/images/screens/web-magazine/preview.png",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Доставляем в более чем 600 городов России",
+        "icon": "/images/screens/web-magazine/icon-1.png"
+      },
+      {
+        "id": 2,
+        "title": "Бережная доставка до двери или пункта выдачи даже\u2028в выходные",
+        "icon": "/images/screens/web-magazine/icon-2.png"
+      },
+      {
+        "id": 3,
+        "title": "Легкое оформление клиентских возвратов за 5 минут",
+        "icon": "/images/screens/web-magazine/icon-3.png"
+      },
+      {
+        "id": 4,
+        "title": "7 дней - бесплатное хранение посылок ваших покупателей",
+        "icon": "/images/screens/web-magazine/icon-4.png"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Стабильная\nи надежная доставка",
+    "typeCard": "advantage",
+    "preview": "/images/screens/delivery-business/preview.png",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DPD Economy - для\nкрупного бизнеса",
+        "subtitle": "Надежная и выгодная  доставка любых грузов",
+        "icon": "/images/screens/delivery-business/icon-1.png"
+      },
+      {
+        "id": 2,
+        "title": "DPD Standard - для\nинтернет-магазинов",
+        "subtitle": "cамая выгодная доставка для ваших заказов среди услуг DPD",
+        "icon": "/images/screens/delivery-business/icon-2.png"
+      },
+      {
+        "id": 3,
+        "title": "DPD - доставка \u2028до маркетплейсов",
+        "subtitle": "продавайте на Wildberries, Ozon, Yandex Market уже сегодня",
+        "icon": "/images/screens/delivery-business/icon-3.png"
+      },
+      {
+        "id": 4,
+        "title": "DPD Shop - для частных лиц\u2028и самозанятых",
+        "subtitle": "простое и выгодное решение для небольших посылок",
+        "icon": "/images/screens/delivery-business/icon-1.png"
+      },
+      {
+        "id": 5,
+        "title": "Международная доставка в 200 стран",
+        "subtitle": "Наши специалисты подберут оптимальный вариант упаковки для вашей продукции.",
+        "icon": "/images/screens/delivery-business/icon-2.png"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Доставляем посылки тех,\nкто делает бизнес\nВыгодно, надежно, удобно",
+    "typeCard": "advantage",
+    "preview": "/images/screens/game/preview.png",
+    "cards": []
+  }
+]

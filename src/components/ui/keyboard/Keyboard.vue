@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import {computed, ref} from 'vue'
 import BackspaceIcon from '@/components/ui/icons/BackspaceIcon.vue'
 
 type KEmits = {
@@ -23,10 +23,10 @@ const keysEn = ref([
 ])
 
 const keyNums = ref([
-  ['1', '2', '3'],
-  ['4', '5', '6'],
-  ['7', '8', '9'],
-  ['ABC', '0'],
+  ['1', '2', '3', '!', '@', '#'],
+  ['4', '5', '6', '$', '%', '^'],
+  ['7', '8', '9', '&', '*', '('],
+  ['ABC', '0', '<=', '_', '=', ')']
 ])
 
 const lang = ref<string>('RU')
@@ -84,18 +84,18 @@ const onPressKey = (key: string) => {
   <div :class="{ 'keyboard-shifted': shift }" class="keyboard keyboard__block">
     <div class="keyboard__row" v-for="(row, index) in targetKeys" :key="index">
       <div
-        v-for="key in row"
-        :key="key"
-        v-ripple
-        :class="[
+          v-for="key in row"
+          :key="key"
+          v-ripple
+          :class="[
           'keyboard__btn',
           {
             space: key === 'space',
           },
         ]"
-        @click="onPressKey(key)"
+          @click="onPressKey(key)"
       >
-        <BackspaceIcon v-if="key === '<='" />
+        <BackspaceIcon v-if="key === '<='"/>
         <p v-if="key !== 'space' && key !== '<='">{{ key }}</p>
       </div>
     </div>
@@ -108,8 +108,9 @@ const onPressKey = (key: string) => {
 .keyboard {
   position: absolute;
   z-index: 1000000;
-  margin: 0 auto;
-  transform: translateX(-50%);
+  bottom: 64px;
+  left: 50%;
+  transform: translate(-50%, 0);
 
   &-shifted {
     text-transform: uppercase;
@@ -120,14 +121,14 @@ const onPressKey = (key: string) => {
     padding: 48px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    background-color: rgba(209, 209, 209, 1);
+    gap: 8px;
+    background-color:#fff;
   }
 
   &__row {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 8px;
   }
 
   &__btn {
@@ -136,15 +137,15 @@ const onPressKey = (key: string) => {
     position: relative;
     overflow: hidden;
     font-family: OpenSans, serif;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: #FAFAFA;
     color: #000;
     font-weight: 500;
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 16px;
+    border-radius: 8px;
 
     @media (max-width: $md4k + px) {
       width: 150px;

@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import {onMounted, ref} from 'vue'
 
 type IProps = {
   type: 'text' | 'number' | 'phone' | 'email' | 'password' | 'search'
   textPosition?: 'left' | 'center' | 'right'
+  state?: 'default' | 'success' | 'error'
   minLength?: number
   maxLength?: number
   modelValue?: string | number
@@ -15,10 +16,12 @@ type IEmits = {
   (eventName: 'update:modelValue', value: string): void
   (eventName: 'onChange', value: string | number): void
   (eventName: 'onInput', value: string | number): void
+  (eventName: 'onMount', element: HTMLInputElement): void
+
 }
 const props = defineProps<IProps>()
 const emits = defineEmits<IEmits>()
-
+const inputRef = ref<HTMLInputElement | null>(null)
 const modelValue = ref(props.modelValue)
 
 const onChange = (event: Event) => {
@@ -32,20 +35,28 @@ const onInput = (event: Event) => {
   emits('update:modelValue', modelValue.value)
   emits('onInput', modelValue.value)
 }
+onMounted(() => {
+  if (inputRef.value) {
+    console.log(inputRef.value)
+    emits('onMount', inputRef.value)
+  }
+})
 </script>
 
 <template>
   <input
-    v-model="modelValue"
-    :type="type"
-    :placeholder="placeholder"
-    :disabled="disabled"
-    :class="['input', textPosition]"
-    :min-length="minLength"
-    :max-length="maxLength"
-    required
-    @change="onChange"
-    @input="onInput"
+      ref="inputRef"
+      v-model="modelValue"
+      :value="modelValue"
+      :type="type"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      :class="['input', textPosition, state]"
+      :min-length="minLength"
+      :max-length="maxLength"
+      required
+      @change="onChange"
+      @input="onInput"
   />
 </template>
 
@@ -56,9 +67,11 @@ const onInput = (event: Event) => {
   justify-content: center;
   align-items: center;
   text-align: start;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 0 48px;
+  border-radius: 16px;
   border: 2px solid transparent;
+  font-size: 32px;
+  background-color: #F6F6F6;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -70,15 +83,25 @@ const onInput = (event: Event) => {
     opacity: 0.5;
   }
 
+
   &:focus {
+    background-color: #fff;
     transition: var(--animation-time) all ease-in-out;
     border-color: var(--thrid-color);
     outline: none;
   }
 
   &::placeholder {
-    font-size: 16px;
+    font-size: 32px;
   }
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
 }
 
 .left {

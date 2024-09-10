@@ -21,8 +21,8 @@ export const useInactivity = (TIME_SECONDS: number) => {
       console.log(time)
       if (time >= timeout) {
         resetTimer()
-        if (route.name !== 'home') {
-          router.push({ name: 'home' })
+        if (route.name !== 'standby') {
+          router.push({ name: 'standby' })
         }
       }
     }, TIME_MS_INTERVAL_TIMER)

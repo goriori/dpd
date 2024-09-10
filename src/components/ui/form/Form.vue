@@ -23,7 +23,7 @@ const onSubmit = (event: Event) => {
 
 <template>
   <form :novalidate="noValidate" @submit.prevent="onSubmit">
-    <slot />
+    <slot/>
   </form>
 </template>
 
