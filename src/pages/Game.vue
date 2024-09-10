@@ -8,7 +8,7 @@ import {useRouter} from "vue-router";
 const router = useRouter()
 const questions = ref(null)
 const loadQuestions = async () => {
-  const response = await fetch('/public/questions.json')
+  const response = await fetch('/questions.json')
   return response.json()
 }
 const finishQuiz = (typeClient: 'new' | 'old') => router.push(`/feedback?type=${typeClient}`)
