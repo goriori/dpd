@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {onMounted, onUnmounted, ref} from 'vue'
-import {gsap} from 'gsap'
+import { onMounted, onUnmounted, ref } from 'vue'
+import { gsap } from 'gsap'
 
 type AProps = {
   color: 'default' | 'warning' | 'error'
@@ -23,7 +23,7 @@ const deleteTimeout = () => {
   if (timeoutId.value) clearTimeout(timeoutId.value)
 }
 onMounted(() => {
-  gsap.from('.alert', {scale: 0, duration: 0.3})
+  gsap.from('.alert', { scale: 0, duration: 0.3 })
   createTimeout()
 })
 onUnmounted(() => {
@@ -33,7 +33,7 @@ onUnmounted(() => {
 
 <template>
   <article v-ripple :class="['alert', color]" @click="onClick">
-    <slot/>
+    <slot />
   </article>
 </template>
 

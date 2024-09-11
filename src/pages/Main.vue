@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
-import {useRouter} from "vue-router";
-import {onMounted, ref} from "vue";
-import Header from "@/components/globals/header/Header.vue";
-import Footer from "@/components/globals/footer/Footer.vue";
-import GameScreen from "@/components/ui/screen/game-screen/GameScreen.vue";
+import { useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
+import Header from '@/components/globals/header/Header.vue'
+import Footer from '@/components/globals/footer/Footer.vue'
+import GameScreen from '@/components/ui/screen/game-screen/GameScreen.vue'
 
 const router = useRouter()
 const infoScreens = ref()
@@ -22,19 +21,19 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="page ">
-    <section class="page-top ">
-      <Header/>
+  <div class="page" @click="startGame">
+    <section class="page-top">
+      <Header />
     </section>
     <section class="page-center container">
       <GameScreen
-          v-if="infoScreens "
-          :title="infoScreens[4].title"
-          :preview="infoScreens[4].preview"
+        v-if="infoScreens"
+        :title="infoScreens[4].title"
+        :preview="infoScreens[4].preview"
       />
     </section>
     <section class="page-bottom">
-      <Footer :button-title="buttonTitle" @on-next="startGame"/>
+      <Footer :button-title="buttonTitle" @on-next="startGame" />
     </section>
   </div>
 </template>

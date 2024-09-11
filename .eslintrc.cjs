@@ -6,7 +6,7 @@ module.exports = {
   parserOptions: {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['@typescript-eslint', 'import'],
   extends: [
@@ -17,7 +17,7 @@ module.exports = {
     'plugin:vue/vue3-essential',
     '@vue/eslint-config-prettier',
     'plugin:import/errors',
-    'plugin:import/warnings'
+    'plugin:import/warnings',
   ],
   rules: {
     'no-console': 'warn',
@@ -40,7 +40,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars-experimental': 'off',
     'no-unused-vars': [
       1,
-      { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' }
+      { argsIgnorePattern: '^_', destructuredArrayIgnorePattern: '^_' },
     ],
     'no-constant-condition': ['error'],
     'no-obj-calls': 'error',
@@ -49,17 +49,16 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-magic-numbers': [
       'error',
-      { ignore: [1], ignoreArrayIndexes: true, ignoreDefaultValues: true }
+      { ignore: [1], ignoreArrayIndexes: true, ignoreDefaultValues: true },
     ],
     'array-callback-return': 'error',
-
   },
   settings: {
     'import/resolver': {
       alias: [['@', './src']],
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
-      }
-    }
-  }
+        extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+      },
+    },
+  },
 }

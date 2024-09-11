@@ -1,16 +1,14 @@
 <script setup lang="ts">
-
-import Screen from "@/components/ui/screen/Screen.vue";
-import BusinessList from "@/components/ui/list/business-list/BusinessList.vue";
+import Screen from '@/components/ui/screen/Screen.vue'
+import BusinessList from '@/components/ui/list/business-list/BusinessList.vue'
 
 type SProps = {
-  title: string;
+  title: string
   cardList: object[]
   preview: string
 }
 
 defineProps<SProps>()
-
 </script>
 
 <template>
@@ -19,10 +17,10 @@ defineProps<SProps>()
       <pre>{{ title }}</pre>
     </template>
     <template #screen-cards>
-      <img :src="preview" alt="image" class="preview">
+      <img :src="preview" alt="image" class="preview" />
     </template>
     <template #screen-preview>
-      <BusinessList :card-list="cardList"/>
+      <BusinessList :card-list="cardList" />
     </template>
   </Screen>
 </template>
@@ -43,8 +41,7 @@ img {
   position: absolute;
   height: 900px;
   left: 50%;
-  transform: translate(-50%,-20%);
+  transform: translate(-50%, -20%);
   object-fit: cover;
 }
-
 </style>

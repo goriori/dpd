@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import {ref} from "vue";
+import { ref } from 'vue'
 
 type LProps = {
   columns?: number
@@ -14,8 +13,8 @@ const columnSpace = ref(`${props.columnSpace}px`)
 </script>
 
 <template>
-  <div class="list" :style="{gridTemplateColumns:columns}">
-    <slot/>
+  <div class="list" :style="{ gridTemplateColumns: columns }">
+    <slot />
   </div>
 </template>
 

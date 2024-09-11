@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import Card from "@/components/ui/cards/Card.vue";
+import Card from '@/components/ui/cards/Card.vue'
 
 type CProps = {
   title?: string
@@ -15,13 +14,15 @@ defineProps<CProps>()
 <template>
   <Card class="advantage-card">
     <template #card-center>
-      <div :class="['content', {long:isSpecial}]">
+      <div :class="['content', { long: isSpecial }]">
         <div class="icon">
-          <div :class="['icon-background', {'background-big':isSpecial}]"></div>
-          <img :src="icon" alt="">
+          <div
+            :class="['icon-background', { 'background-big': isSpecial }]"
+          ></div>
+          <img :src="icon" alt="" />
         </div>
         <div>
-          <p class="title title-big" v-html="html"/>
+          <p class="title title-big" v-html="html" />
           <p class="title">{{ title }}</p>
           <p class="subtitle">{{ subtitle }}</p>
         </div>
@@ -31,7 +32,6 @@ defineProps<CProps>()
 </template>
 
 <style scoped lang="scss">
-
 .icon {
   position: relative;
   display: flex;
@@ -46,19 +46,18 @@ defineProps<CProps>()
     max-width: 128px;
     transform: translate(-50%, 0);
     z-index: 1;
-    background: url("/images/screens/services/backgorund-icon.png") no-repeat;
+    background: url('/images/screens/services/backgorund-icon.png') no-repeat;
   }
 
   img {
     z-index: 2;
     object-fit: cover;
-
   }
 }
 
 .background-big {
   max-width: 250px;
-  background: url("/images/screens/services/backgorund-icon.png") no-repeat;
+  background: url('/images/screens/services/backgorund-icon.png') no-repeat;
 }
 
 .content {
@@ -75,7 +74,6 @@ p {
   line-height: normal;
   font-weight: 400;
 }
-
 
 .title {
   font-size: 20px;

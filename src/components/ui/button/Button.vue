@@ -16,13 +16,9 @@ const onClick = () => emits('onClick')
 </script>
 
 <template>
-  <button
-      :class="['btn', background, { outline }]"
-      @click="onClick"
-      v-ripple
-  >
+  <button :class="['btn', background, { outline }]" @click="onClick" v-ripple>
     <p v-if="!isLoading">{{ title }}</p>
-    <CircleSpinner v-else class="loader"/>
+    <CircleSpinner v-else class="loader" />
   </button>
 </template>
 

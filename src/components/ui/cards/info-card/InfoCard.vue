@@ -1,6 +1,5 @@
 <script setup lang="ts">
-
-import Card from "@/components/ui/cards/Card.vue";
+import Card from '@/components/ui/cards/Card.vue'
 
 type CProps = {
   title: string
@@ -12,11 +11,15 @@ defineProps<CProps>()
 </script>
 
 <template>
-  <Card :icon-bottom-right="iconBottomRight" :icon-top-right="iconTopRight" class="info-card">
+  <Card
+    :icon-bottom-right="iconBottomRight"
+    :icon-top-right="iconTopRight"
+    class="info-card"
+  >
     <template #card-center>
       <div class="content">
         <p>{{ title }}</p>
-        <img :src="icon" alt="">
+        <img :src="icon" alt="" />
       </div>
     </template>
   </Card>

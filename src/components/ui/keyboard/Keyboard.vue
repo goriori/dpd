@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, ref} from 'vue'
+import { computed, ref } from 'vue'
 import BackspaceIcon from '@/components/ui/icons/BackspaceIcon.vue'
 
 type KEmits = {
@@ -26,7 +26,7 @@ const keyNums = ref([
   ['1', '2', '3', '!', '@', '#'],
   ['4', '5', '6', '$', '%', '^'],
   ['7', '8', '9', '&', '*', '('],
-  ['ABC', '0', '<=', '_', '=', ')']
+  ['ABC', '0', '<=', '_', '=', ')'],
 ])
 
 const lang = ref<string>('RU')
@@ -84,18 +84,18 @@ const onPressKey = (key: string) => {
   <div :class="{ 'keyboard-shifted': shift }" class="keyboard keyboard__block">
     <div class="keyboard__row" v-for="(row, index) in targetKeys" :key="index">
       <div
-          v-for="key in row"
-          :key="key"
-          v-ripple
-          :class="[
+        v-for="key in row"
+        :key="key"
+        v-ripple
+        :class="[
           'keyboard__btn',
           {
             space: key === 'space',
           },
         ]"
-          @click="onPressKey(key)"
+        @click="onPressKey(key)"
       >
-        <BackspaceIcon v-if="key === '<='"/>
+        <BackspaceIcon v-if="key === '<='" />
         <p v-if="key !== 'space' && key !== '<='">{{ key }}</p>
       </div>
     </div>
@@ -122,7 +122,7 @@ const onPressKey = (key: string) => {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    background-color:#fff;
+    background-color: #fff;
   }
 
   &__row {
@@ -137,7 +137,7 @@ const onPressKey = (key: string) => {
     position: relative;
     overflow: hidden;
     font-family: OpenSans, serif;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     color: #000;
     font-weight: 500;
     width: 48px;

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
-import LogoIcon from "@/components/ui/icons/LogoIcon.vue";
-import {useRouter} from "vue-router";
+import LogoIcon from '@/components/ui/icons/LogoIcon.vue'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
@@ -10,7 +9,7 @@ const toMain = () => router.push('/')
 
 <template>
   <header>
-    <LogoIcon @click="toMain"/>
+    <LogoIcon @click="toMain" />
   </header>
 </template>
 

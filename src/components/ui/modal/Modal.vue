@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {onMounted} from 'vue'
-import {gsap} from 'gsap'
+import { onMounted } from 'vue'
+import { gsap } from 'gsap'
 
 type MEmits = {
   (eventName: 'onClickBackground'): void
@@ -14,7 +14,7 @@ const onClose = () => emits('onClickBackground')
 const onClickContent = () => emits('onClickContent')
 const onMount = () => emits('onMount')
 onMounted(() => {
-  tl.from('.popup-base', {scaleX: 5, scaleY: 10}).from('.popup-content', {
+  tl.from('.popup-base', { scaleX: 5, scaleY: 10 }).from('.popup-content', {
     top: 0,
     scale: 0,
   })
@@ -26,7 +26,7 @@ onMounted(() => {
   <div class="popup-base">
     <div class="popup-background" @click="onClose"></div>
     <div class="popup-content" @click="onClickContent">
-      <slot name="window"/>
+      <slot name="window" />
     </div>
   </div>
 </template>
@@ -50,6 +50,7 @@ onMounted(() => {
   }
 
   &-content {
+    width: 100%;
     position: absolute;
   }
 }

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-
-import {useRouter} from "vue-router";
-import {onMounted, ref} from "vue";
-import Header from "@/components/globals/header/Header.vue";
-import InfoScreen from "@/components/ui/screen/info-screen/InfoScreen.vue";
-import BusinessScreen from "@/components/ui/screen/business-screen/BusinessScreen.vue";
+import { useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
+import Header from '@/components/globals/header/Header.vue'
+import InfoScreen from '@/components/ui/screen/info-screen/InfoScreen.vue'
+import BusinessScreen from '@/components/ui/screen/business-screen/BusinessScreen.vue'
 
 export type INFO_CARD = {
   id: number
@@ -15,12 +14,12 @@ export type INFO_CARD = {
   icon: string
 }
 export type INFO_SCREEN = {
-  "id": number,
-  "title": string,
-  "preview": string,
-  "typeCard": string,
+  id: number
+  title: string
+  preview: string
+  typeCard: string
   oferta?: string
-  "cards": INFO_CARD[]
+  cards: INFO_CARD[]
 }
 
 const router = useRouter()
@@ -28,7 +27,6 @@ const timerId = ref<number | undefined>(undefined)
 const infoScreens = ref<INFO_SCREEN[] | null>(null)
 const targetInfoScreen = ref(0)
 const targetEntityScreen = ref('info')
-
 
 const onLoadInfoScreens = async () => {
   const response = await fetch('/info-screens.json')
@@ -49,7 +47,7 @@ const startSlides = () => {
 
 const clickPage = () => {
   clearInterval(timerId.value)
-  router.push({name: 'main'})
+  router.push({ name: 'main' })
 }
 onMounted(async () => {
   infoScreens.value = await onLoadInfoScreens()
@@ -58,28 +56,27 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="page " @click="clickPage">
-    <section class="page-top ">
-      <Header/>
+  <div class="page" @click="clickPage">
+    <section class="page-top">
+      <Header />
     </section>
     <section class="page-center container">
       <InfoScreen
-          v-if="infoScreens && targetEntityScreen === 'info'"
-          :title="infoScreens[targetInfoScreen].title"
-          :oferta="infoScreens[targetInfoScreen].oferta"
-          :typeCard="infoScreens[targetInfoScreen].typeCard"
-          :card-list="infoScreens[targetInfoScreen].cards"
-          :preview="infoScreens[targetInfoScreen].preview"
+        v-if="infoScreens && targetEntityScreen === 'info'"
+        :title="infoScreens[targetInfoScreen].title"
+        :oferta="infoScreens[targetInfoScreen].oferta"
+        :typeCard="infoScreens[targetInfoScreen].typeCard"
+        :card-list="infoScreens[targetInfoScreen].cards"
+        :preview="infoScreens[targetInfoScreen].preview"
       />
       <BusinessScreen
-          v-if="infoScreens && targetEntityScreen === 'business'"
-          :title="infoScreens[targetInfoScreen].title"
-          :card-list="infoScreens[targetInfoScreen].cards"
-          :preview="infoScreens[targetInfoScreen].preview"
+        v-if="infoScreens && targetEntityScreen === 'business'"
+        :title="infoScreens[targetInfoScreen].title"
+        :card-list="infoScreens[targetInfoScreen].cards"
+        :preview="infoScreens[targetInfoScreen].preview"
       />
     </section>
-    <section class="page-bottom">
-    </section>
+    <section class="page-bottom"></section>
   </div>
 </template>
 

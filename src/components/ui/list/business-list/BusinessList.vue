@@ -1,9 +1,8 @@
 <script setup lang="ts">
-
-import {useId} from "vue";
-import List from "@/components/ui/list/List.vue";
-import AdvantageCard from "@/components/ui/cards/advantage-card/AdvantageCard.vue";
-import {INFO_CARD} from "@/pages/Standby.vue";
+import { useId } from 'vue'
+import List from '@/components/ui/list/List.vue'
+import AdvantageCard from '@/components/ui/cards/advantage-card/AdvantageCard.vue'
+import { INFO_CARD } from '@/pages/Standby.vue'
 
 type DProps = {
   cardList: INFO_CARD[]
@@ -17,9 +16,9 @@ console.log(useId())
   <List class="business-list">
     <template v-for="card in cardList" :key="useId()">
       <AdvantageCard
-          :title="card.title"
-          :subtitle="card.subtitle"
-          :icon="card.icon"
+        :title="card.title"
+        :subtitle="card.subtitle"
+        :icon="card.icon"
       />
     </template>
   </List>

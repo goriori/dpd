@@ -1,11 +1,10 @@
 <script setup lang="ts">
-
-import Screen from "@/components/ui/screen/Screen.vue";
-import DeliveryList from "@/components/ui/list/delivery-list/DeliveryList.vue";
-import AdvantageList from "@/components/ui/list/advantage-list/AdvantageList.vue";
+import Screen from '@/components/ui/screen/Screen.vue'
+import DeliveryList from '@/components/ui/list/delivery-list/DeliveryList.vue'
+import AdvantageList from '@/components/ui/list/advantage-list/AdvantageList.vue'
 
 type SProps = {
-  title: string;
+  title: string
   cardList: object[]
   preview: string
   typeCard: 'info' | 'advantage'
@@ -13,8 +12,6 @@ type SProps = {
 }
 
 defineProps<SProps>()
-
-
 </script>
 
 <template>
@@ -23,12 +20,15 @@ defineProps<SProps>()
       <pre>{{ title }}</pre>
     </template>
     <template #screen-cards>
-      <DeliveryList :card-list="cardList" v-if="typeCard === 'info'"/>
-      <AdvantageList :card-list="cardList" v-else-if="typeCard === 'advantage'"/>
+      <DeliveryList :card-list="cardList" v-if="typeCard === 'info'" />
+      <AdvantageList
+        :card-list="cardList"
+        v-else-if="typeCard === 'advantage'"
+      />
     </template>
     <template #screen-preview>
-      <img :src="preview" alt="image" class="preview">
-      <p v-if="oferta" class="oferta"> {{ oferta }}</p>
+      <img :src="preview" alt="image" class="preview" />
+      <p v-if="oferta" class="oferta">{{ oferta }}</p>
     </template>
   </Screen>
 </template>

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-
-import Screen from "@/components/ui/screen/Screen.vue";
+import Screen from '@/components/ui/screen/Screen.vue'
 
 type SProps = {
-  title: string;
+  title: string
   preview: string
 }
 
@@ -22,11 +21,11 @@ const message = `
       <pre>{{ title }}</pre>
     </template>
     <template #screen-cards>
-      <img :src="preview" alt="image" class="preview">
+      <img :src="preview" alt="image" class="preview" />
     </template>
     <template #screen-preview>
       <pre class="black">
-        {{message}}
+        {{ message }}
       </pre>
     </template>
   </Screen>
@@ -59,5 +58,4 @@ img {
   transform: translate(-50%, -20%);
   object-fit: cover;
 }
-
 </style>

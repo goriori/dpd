@@ -1,40 +1,56 @@
 <script setup lang="ts">
-import {gsap} from "gsap";
-import {onMounted} from "vue";
+import { gsap } from 'gsap'
+import { onMounted } from 'vue'
 
 onMounted(() => {
-  gsap.timeline().fromTo('.screen-top', {
-    scale: 0,
-    duration: 0.3
-  }, {
-    scale: 1,
-    duration: 0.3
-  }).fromTo('.screen-center', {
-    scale: 0,
-    duration: 0.3
-  }, {
-    scale: 1,
-    duration: 0.3
-  }).fromTo('.screen-bottom', {
-    scale: 0,
-    duration: 0.3
-  }, {
-    scale: 1,
-    duration: 0.3
-  })
+  gsap
+    .timeline()
+    .fromTo(
+      '.screen-top',
+      {
+        scale: 0,
+        duration: 0.3,
+      },
+      {
+        scale: 1,
+        duration: 0.3,
+      }
+    )
+    .fromTo(
+      '.screen-center',
+      {
+        scale: 0,
+        duration: 0.3,
+      },
+      {
+        scale: 1,
+        duration: 0.3,
+      }
+    )
+    .fromTo(
+      '.screen-bottom',
+      {
+        scale: 0,
+        duration: 0.3,
+      },
+      {
+        scale: 1,
+        duration: 0.3,
+      }
+    )
 })
 </script>
 
 <template>
   <article class="screen">
     <section class="screen-top">
-      <slot name="screen-info"/>
+      <slot name="screen-info" />
     </section>
     <section class="screen-center">
-      <slot name="screen-cards"/>
+      <slot name="screen-cards" />
     </section>
     <section class="screen-bottom">
-      <slot name="screen-preview"/>
+      <slot name="screen-preview" />
     </section>
   </article>
 </template>
@@ -49,7 +65,7 @@ onMounted(() => {
   }
 
   &-center {
-    flex: 0 1 763px
+    flex: 0 1 763px;
   }
 
   &-bottom {

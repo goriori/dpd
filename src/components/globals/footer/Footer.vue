@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
-import Button from "@/components/ui/button/Button.vue";
-import {computed} from "vue";
+import Button from '@/components/ui/button/Button.vue'
+import { computed } from 'vue'
 
 type FProps = {
   buttonTitle: string
@@ -17,7 +16,13 @@ const onNext = () => emits('onNext')
 
 <template>
   <footer>
-    <Button outline background="primary" :title="title" class="btn-next" @on-click="onNext"/>
+    <Button
+      outline
+      background="primary"
+      :title="title"
+      class="btn-next"
+      @on-click="onNext"
+    />
   </footer>
 </template>
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted, ref} from 'vue'
+import { onMounted, ref } from 'vue'
 
 type IProps = {
   type: 'text' | 'number' | 'phone' | 'email' | 'password' | 'search'
@@ -17,7 +17,6 @@ type IEmits = {
   (eventName: 'onChange', value: string | number): void
   (eventName: 'onInput', value: string | number): void
   (eventName: 'onMount', element: HTMLInputElement): void
-
 }
 const props = defineProps<IProps>()
 const emits = defineEmits<IEmits>()
@@ -45,18 +44,18 @@ onMounted(() => {
 
 <template>
   <input
-      ref="inputRef"
-      v-model="modelValue"
-      :value="modelValue"
-      :type="type"
-      :placeholder="placeholder"
-      :disabled="disabled"
-      :class="['input', textPosition, state]"
-      :min-length="minLength"
-      :max-length="maxLength"
-      required
-      @change="onChange"
-      @input="onInput"
+    ref="inputRef"
+    v-model="modelValue"
+    :value="modelValue"
+    :type="type"
+    :placeholder="placeholder"
+    :disabled="disabled"
+    :class="['input', textPosition, state]"
+    :min-length="minLength"
+    :max-length="maxLength"
+    required
+    @change="onChange"
+    @input="onInput"
   />
 </template>
 
@@ -71,7 +70,7 @@ onMounted(() => {
   border-radius: 16px;
   border: 2px solid transparent;
   font-size: 32px;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
@@ -82,7 +81,6 @@ onMounted(() => {
     background-color: #fff;
     opacity: 0.5;
   }
-
 
   &:focus {
     background-color: #fff;
